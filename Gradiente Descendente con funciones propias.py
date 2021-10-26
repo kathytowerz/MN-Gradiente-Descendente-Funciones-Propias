@@ -37,6 +37,19 @@ def linear_solve(M, v, x_start, umbral, max_iter):
         if error_np < umbral:
             return x_start
     #return x_start
+    
+#La multiplicación matricial en forma de lista
+
+def M_Matricial (A,b):
+    C=[]
+    for i in range(len(A)):
+        for j in range(len(b)):
+            x=0
+            for n in range(len(A[0])):
+                x=x+A[i][n]*b[n]
+        C.append(x)
+    return C
+	
 
 print(linear_solve(A_coef, b_coef, x_sol, 0.001, 10000))
 '''
